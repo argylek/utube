@@ -1,0 +1,143 @@
+  [1m[35m (474.9ms)[0m  [1m[35mCREATE DATABASE "Utube_development" ENCODING = 'unicode'[0m
+  [1m[35m (95.1ms)[0m  [1m[35mCREATE DATABASE "Utube_test" ENCODING = 'unicode'[0m
+  [1m[35m (51.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7236279239916983655)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200307171735)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "f_name" character varying DEFAULT 'joe' NOT NULL, "l_name" character varying DEFAULT 'regular' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200307171735"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20200307172504)
+  [1m[35m (40.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "genre" character varying, "duration" character varying, "description" character varying, "trailer" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200307172504"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20200307172554)
+  [1m[35m (24.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "title" character varying, "body" text, "user_id" bigint NOT NULL, "movie_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_56963e5c80"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_movie_id" ON "comments"  ("movie_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200307172554"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToMovies (20200307231935)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "movies" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200307231935"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-07 23:30:52.827275"], ["updated_at", "2020-03-07 23:30:52.827275"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7236279239916983655)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (2.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Dark Night"], ["genre", "Action"], ["duration", "2hr 32min"], ["description", "http://www.imdb.com/title/tt0468569/"], ["trailer", "https://www.youtube.com/embed/EXeTwQWrcwY"], ["created_at", "2020-03-07 23:31:57.161420"], ["updated_at", "2020-03-07 23:31:57.161420"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Bourne Identity"], ["genre", "Action"], ["duration", "1hr 59min"], ["description", "http://www.imdb.com/title/tt0258463/"], ["trailer", "https://www.youtube.com/embed/cD-uQreIwEk"], ["created_at", "2020-03-07 23:31:57.174121"], ["updated_at", "2020-03-07 23:31:57.174121"], ["img", "https://www.imdb.com/title/tt0258463/mediaviewer/rm3995080704?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Avatar"], ["genre", "Action"], ["duration", "2hr 42min"], ["description", "http://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_1"], ["trailer", "https://www.youtube.com/embed/5PSNL1qE6VY"], ["created_at", "2020-03-07 23:31:57.183369"], ["updated_at", "2020-03-07 23:31:57.183369"], ["img", "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Kill Bill Vol 1"], ["genre", "Action"], ["duration", "1hr 51min"], ["description", "http://www.imdb.com/title/tt0266697/?ref_=nv_sr_1"], ["trailer", "https://www.youtube.com/embed/ot6C1ZKyiME"], ["created_at", "2020-03-07 23:31:57.193411"], ["updated_at", "2020-03-07 23:31:57.193411"], ["img", "https://www.imdb.com/title/tt0266697/mediaviewer/rm2033140224?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Gladiator"], ["genre", "Action"], ["duration", "2hr 35min"], ["description", "http://www.imdb.com/title/tt0172495/?ref_=nv_sr_1"], ["trailer", "https://www.youtube.com/embed/owK1qxDselE"], ["created_at", "2020-03-07 23:31:57.202890"], ["updated_at", "2020-03-07 23:31:57.202890"], ["img", "https://www.imdb.com/title/tt0172495/mediaviewer/rm2442542592?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Rock"], ["genre", "Action"], ["duration", "2hr 16min"], ["description", "http://www.imdb.com/title/tt0117500/"], ["trailer", "https://www.youtube.com/embed/313n0wga2xo"], ["created_at", "2020-03-07 23:31:57.214599"], ["updated_at", "2020-03-07 23:31:57.214599"], ["img", "https://www.imdb.com/title/tt0117500/mediaviewer/rm2777683456?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Jaws"], ["genre", "Action"], ["duration", "2hr 4min"], ["description", "http://www.imdb.com/title/tt0073195/"], ["trailer", "https://www.youtube.com/embed/U1fu_sA7XhE"], ["created_at", "2020-03-07 23:31:57.225771"], ["updated_at", "2020-03-07 23:31:57.225771"], ["img", "https://www.imdb.com/title/tt0073195/mediaviewer/rm1449540864?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Star Wars Episode IV A New Hope"], ["genre", "Action"], ["duration", "2hr 1min"], ["description", "http://www.imdb.com/title/tt0076759/"], ["trailer", "https://www.youtube.com/embed/1g3_CFmnU7k"], ["created_at", "2020-03-07 23:31:57.235712"], ["updated_at", "2020-03-07 23:31:57.235712"], ["img", "https://www.imdb.com/title/tt0076759/mediaviewer/rm3263717120?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Star Wars Episode V The Empire Strikes Back"], ["genre", "Action"], ["duration", "2hr 4min"], ["description", "http://www.imdb.com/title/tt0080684/"], ["trailer", "https://www.youtube.com/embed/mz_YWNhKOkM"], ["created_at", "2020-03-07 23:31:57.248017"], ["updated_at", "2020-03-07 23:31:57.248017"], ["img", "https://www.imdb.com/title/tt0080684/mediaviewer/rm3114097664?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Star Wars Episode VI Return of the Jedi"], ["genre", "Action"], ["duration", "2hr 11min"], ["description", "http://www.imdb.com/title/tt0086190/"], ["trailer", "https://www.youtube.com/embed/7L8p7_SLzvU"], ["created_at", "2020-03-07 23:31:57.258389"], ["updated_at", "2020-03-07 23:31:57.258389"], ["img", "https://www.imdb.com/title/tt0086190/mediaviewer/rm602420224?ref_=tt_ov_i"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Batman Begins"], ["genre", "Action"], ["duration", "2hr 20min"], ["description", "http://www.imdb.com/title/tt0372784/"], ["trailer", "https://www.youtube.com/embed/QhPqez3CwiM"], ["created_at", "2020-03-07 23:31:57.269960"], ["updated_at", "2020-03-07 23:31:57.269960"], ["img", "https://www.imdb.com/title/tt0372784/mediaviewer/rm277354496?ref_=tt_ov_i"]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Top Gun"], ["genre", "Action"], ["duration", "1hr 50min"], ["description", "http://www.imdb.com/title/tt0092099/"], ["trailer", "https://www.youtube.com/embed/qAfbp3YX9F0"], ["created_at", "2020-03-07 23:31:57.290553"], ["updated_at", "2020-03-07 23:31:57.290553"], ["img", "https://www.imdb.com/title/tt0092099/mediaviewer/rm2145457920?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dogma"], ["genre", "Comedy"], ["duration", "2hr 10min"], ["description", "http://www.imdb.com/title/tt0120655/"], ["trailer", "https://www.youtube.com/embed/20CRw3XdETA"], ["created_at", "2020-03-07 23:31:57.302353"], ["updated_at", "2020-03-07 23:31:57.302353"], ["img", "https://www.imdb.com/title/tt0120655/mediaviewer/rm3781231104?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Team America World Peace"], ["genre", "Comedy"], ["duration", "1hr 38min"], ["description", "http://www.imdb.com/title/tt0372588/"], ["trailer", "https://www.youtube.com/embed/RPBX47zSktc"], ["created_at", "2020-03-07 23:31:57.317854"], ["updated_at", "2020-03-07 23:31:57.317854"], ["img", "https://www.imdb.com/title/tt0372588/mediaviewer/rm4236287232?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Zoolander"], ["genre", "Comedy"], ["duration", "1hr 30min"], ["description", "http://www.imdb.com/title/tt0196229/?ref_=nv_sr_2"], ["trailer", "https://www.youtube.com/embed/YtQq0T3ExLs"], ["created_at", "2020-03-07 23:31:57.325055"], ["updated_at", "2020-03-07 23:31:57.325055"], ["img", "https://www.imdb.com/title/tt0196229/mediaviewer/rm2303908096?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Superbad"], ["genre", "Comedy"], ["duration", "1hr 53min"], ["description", "http://www.imdb.com/title/tt0829482/?ref_=nv_sr_1"], ["trailer", "https://www.youtube.com/embed/MNpoTxeydiY"], ["created_at", "2020-03-07 23:31:57.334161"], ["updated_at", "2020-03-07 23:31:57.334161"], ["img", "https://www.imdb.com/title/tt0829482/mediaviewer/rm1868010240?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Hangover"], ["genre", "Comedy"], ["duration", "1hr 40min"], ["description", "http://www.imdb.com/title/tt1119646/?ref_=nv_sr_1"], ["trailer", "https://www.youtube.com/embed/vhFVZsk3XEs"], ["created_at", "2020-03-07 23:31:57.345050"], ["updated_at", "2020-03-07 23:31:57.345050"], ["img", "https://www.imdb.com/title/tt1119646/mediaviewer/rm401570304?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Weird Science"], ["genre", "Comedy"], ["duration", "1hr 34min"], ["description", "http://www.imdb.com/title/tt0090305/"], ["trailer", "https://www.youtube.com/embed/9qd04u2Yj44"], ["created_at", "2020-03-07 23:31:57.354182"], ["updated_at", "2020-03-07 23:31:57.354182"], ["img", "https://www.imdb.com/title/tt0090305/mediaviewer/rm2376937472?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Major League"], ["genre", "Comedy"], ["duration", "1hr 47min"], ["description", "http://www.imdb.com/title/tt0097815/"], ["trailer", "https://www.youtube.com/embed/7O6QHXQE6Cc"], ["created_at", "2020-03-07 23:31:57.365145"], ["updated_at", "2020-03-07 23:31:57.365145"], ["img", "https://www.imdb.com/title/tt0097815/mediaviewer/rm28835840?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Internship"], ["genre", "Comedy"], ["duration", "1hr 59min"], ["description", "http://www.imdb.com/title/tt2234155/"], ["trailer", "https://www.youtube.com/embed/cdnoqCViqUo"], ["created_at", "2020-03-07 23:31:57.372154"], ["updated_at", "2020-03-07 23:31:57.372154"], ["img", "https://www.imdb.com/title/tt2234155/mediaviewer/rm2225251328?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Back to the Future"], ["genre", "Comedy"], ["duration", "1hr 56min"], ["description", "http://www.imdb.com/title/tt0088763/"], ["trailer", "https://www.youtube.com/embed/qvsgGtivCgs"], ["created_at", "2020-03-07 23:31:57.381864"], ["updated_at", "2020-03-07 23:31:57.381864"], ["img", "https://www.imdb.com/title/tt0088763/mediaviewer/rm554638848?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Anchorman"], ["genre", "Comedy"], ["duration", "1hr 34min"], ["description", "http://www.imdb.com/title/tt0357413/"], ["trailer", "https://www.youtube.com/embed/NJQ4qEWm9lU"], ["created_at", "2020-03-07 23:31:57.392989"], ["updated_at", "2020-03-07 23:31:57.392989"], ["img", "https://www.imdb.com/title/tt0357413/mediaviewer/rm2714340352?ref_=tt_ov_i"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Wedding Crashers"], ["genre", "Comedy"], ["duration", "1hr 59min"], ["description", "http://www.imdb.com/title/tt0396269/"], ["trailer", "https://www.youtube.com/embed/omI8i1a7rlQ"], ["created_at", "2020-03-07 23:31:57.400649"], ["updated_at", "2020-03-07 23:31:57.400649"], ["img", "https://www.imdb.com/title/tt0396269/mediaviewer/rm746526464?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dazed and Confused"], ["genre", "Comedy"], ["duration", "1hr 42min"], ["description", "http://www.imdb.com/title/tt0106677/"], ["trailer", "https://www.youtube.com/embed/3aQuvPlcB-8"], ["created_at", "2020-03-07 23:31:57.407670"], ["updated_at", "2020-03-07 23:31:57.407670"], ["img", "https://www.imdb.com/title/tt0106677/mediaviewer/rm3026180352?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ferris Beullers Day Off"], ["genre", "Comedy"], ["duration", "1hr 43min"], ["description", "http://www.imdb.com/title/tt0091042/"], ["trailer", "https://www.youtube.com/embed/R-P6p86px6U"], ["created_at", "2020-03-07 23:31:57.414720"], ["updated_at", "2020-03-07 23:31:57.414720"], ["img", "https://www.imdb.com/title/tt0091042/mediaviewer/rm4100659200?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Monty Pythons Holy Grail"], ["genre", "Comedy"], ["duration", "1hr 31min"], ["description", "http://www.imdb.com/title/tt0071853/"], ["trailer", "https://www.youtube.com/embed/LG1PlkURjxE"], ["created_at", "2020-03-07 23:31:57.422142"], ["updated_at", "2020-03-07 23:31:57.422142"], ["img", "https://www.imdb.com/title/tt0071853/mediaviewer/rm1943276800?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Blues Brothers"], ["genre", "Comedy"], ["duration", "2hr 13min"], ["description", "http://www.imdb.com/title/tt0080455/"], ["trailer", "https://www.youtube.com/embed/A-xtJYIwfYo"], ["created_at", "2020-03-07 23:31:57.429442"], ["updated_at", "2020-03-07 23:31:57.429442"], ["img", "https://www.imdb.com/title/tt0080455/mediaviewer/rm1305239296?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Animal House"], ["genre", "Comedy"], ["duration", "1hr 49min"], ["description", "http://www.imdb.com/title/tt0077975/"], ["trailer", "https://www.youtube.com/embed/BoS3-yHoaSY"], ["created_at", "2020-03-07 23:31:57.436552"], ["updated_at", "2020-03-07 23:31:57.436552"], ["img", "https://www.imdb.com/title/tt0077975/mediaviewer/rm3420263936?ref_=tt_ov_i"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Godfather"], ["genre", "Drama"], ["duration", "2hr 55min"], ["description", "http://www.imdb.com/title/tt0068646/"], ["trailer", "https://www.youtube.com/embed/5DO-nDW43Ik"], ["created_at", "2020-03-07 23:31:57.445565"], ["updated_at", "2020-03-07 23:31:57.445565"], ["img", "https://www.imdb.com/title/tt0068646/mediaviewer/rm746868224?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Rocky"], ["genre", "Drama"], ["duration", "2hr 00min"], ["description", "http://www.imdb.com/title/tt0075148/"], ["trailer", "https://www.youtube.com/embed/3VUblDwa648"], ["created_at", "2020-03-07 23:31:57.456284"], ["updated_at", "2020-03-07 23:31:57.456284"], ["img", "https://www.imdb.com/title/tt0075148/mediaviewer/rm960529408?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Forrest Gump"], ["genre", "Drama"], ["duration", "2hr 22min"], ["description", "http://www.imdb.com/title/tt0109830/"], ["trailer", "https://www.youtube.com/embed/YNh9Es8Ut6U"], ["created_at", "2020-03-07 23:31:57.463222"], ["updated_at", "2020-03-07 23:31:57.463222"], ["img", "https://www.imdb.com/title/tt0109830/mediaviewer/rm1954748672?ref_=tt_ov_i"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Pulp Fiction"], ["genre", "Drama"], ["duration", "2hr 34min"], ["description", "http://www.imdb.com/title/tt0110912/"], ["trailer", "https://www.youtube.com/embed/s7EdQ4FqbhY"], ["created_at", "2020-03-07 23:31:57.470547"], ["updated_at", "2020-03-07 23:31:57.470547"], ["img", "https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "duration", "description", "trailer", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Swingers"], ["genre", "Drama"], ["duration", "1hr 36min"], ["description", "http://www.imdb.com/title/tt0117802/"], ["trailer", "https://www.youtube.com/embed/nWCct8XbQD0"], ["created_at", "2020-03-07 23:31:57.477519"], ["updated_at", "2020-03-07 23:31:57.477519"], ["img", "https://www.imdb.com/title/tt0117802/mediaviewer/rm3972792320?ref_=tt_ov_i"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m

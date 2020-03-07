@@ -93,7 +93,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0372784/", 
  trailer: "https://www.youtube.com/embed/QhPqez3CwiM",
- img: "https://www.imdb.com/title/tt0372784/mediaviewer/rm277354496?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BZmUwNGU2ZmItMmRiNC00MjhlLTg5YWUtODMyNzkxODYzMmZlXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY1000_SX750_AL_.jpg"
  )
  Movie.create(
  title: "Top Gun",
@@ -101,7 +101,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0092099/", 
  trailer: "https://www.youtube.com/embed/qAfbp3YX9F0",
- img: "https://www.imdb.com/title/tt0092099/mediaviewer/rm2145457920?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BZjQxYTA3ODItNzgxMy00N2Y2LWJlZGMtMTRlM2JkZjI1ZDhhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,646,1000_AL_.jpg"
  )
  Movie.create(
  title: "Dogma",
@@ -117,7 +117,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0372588/", 
  trailer: "https://www.youtube.com/embed/RPBX47zSktc",
- img: "https://www.imdb.com/title/tt0372588/mediaviewer/rm4236287232?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMTM2Nzc4NjYxMV5BMl5BanBnXkFtZTcwNTM1MTcyMQ@@._V1_.jpg"
  )
  Movie.create(
  title: "Zoolander",
@@ -141,7 +141,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt1119646/?ref_=nv_sr_1", 
  trailer: "https://www.youtube.com/embed/vhFVZsk3XEs",
- img: "https://www.imdb.com/title/tt1119646/mediaviewer/rm401570304?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg"
  )
  Movie.create(
  title: "Weird Science",
@@ -157,7 +157,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0097815/",
  trailer: "https://www.youtube.com/embed/7O6QHXQE6Cc",
- img: "https://www.imdb.com/title/tt0097815/mediaviewer/rm28835840?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BNzM5MWViNTMtMDQ5Ni00M2M0LTg1OTktY2I3YTJkODVkNTBkXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_.jpg"
  )
  Movie.create(
  title: "The Internship",
@@ -181,7 +181,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0357413/",
  trailer: "https://www.youtube.com/embed/NJQ4qEWm9lU",
- img: "https://www.imdb.com/title/tt0357413/mediaviewer/rm2714340352?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMTQ2MzYwMzk5Ml5BMl5BanBnXkFtZTcwOTI4NzUyMw@@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
  )
  Movie.create(
  title: "Wedding Crashers",
@@ -205,7 +205,7 @@ duration: "1hr 43min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0091042/", 
 trailer: "https://www.youtube.com/embed/R-P6p86px6U",
-img: "https://www.imdb.com/title/tt0091042/mediaviewer/rm4100659200?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BMDA0NjZhZWUtNmI2NC00MmFjLTgwZDYtYzVjZmNhMDVmOTBkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
 )
 Movie.create(
 title: "Monty Pythons Holy Grail",
@@ -221,7 +221,7 @@ duration: "2hr 13min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0080455/", 
 trailer: "https://www.youtube.com/embed/A-xtJYIwfYo",
-img: "https://www.imdb.com/title/tt0080455/mediaviewer/rm1305239296?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BYTdlMDExOGUtN2I3MS00MjY5LWE1NTAtYzc3MzIxN2M3OWY1XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
 )
 Movie.create(
 title: "Animal House",
@@ -237,7 +237,7 @@ duration: "2hr 55min",
 genre: "Drama",
 description: "http://www.imdb.com/title/tt0068646/", 
 trailer: "https://www.youtube.com/embed/5DO-nDW43Ik",
-img: "https://www.imdb.com/title/tt0068646/mediaviewer/rm746868224?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
 )
  Movie.create(
 title: "Rocky",
@@ -245,7 +245,7 @@ duration: "2hr 00min",
 genre: "Drama",
 description: "http://www.imdb.com/title/tt0075148/", 
 trailer: "https://www.youtube.com/embed/3VUblDwa648",
-img: "https://www.imdb.com/title/tt0075148/mediaviewer/rm960529408?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
 )
 Movie.create(
 title: "Forrest Gump",
@@ -253,7 +253,7 @@ duration: "2hr 22min",
 genre: "Drama",
 description: "http://www.imdb.com/title/tt0109830/", 
 trailer: "https://www.youtube.com/embed/YNh9Es8Ut6U",
-img: "https://www.imdb.com/title/tt0109830/mediaviewer/rm1954748672?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
 )
 Movie.create(
 title: "Pulp Fiction",
@@ -261,7 +261,7 @@ duration: "2hr 34min",
 genre: "Drama",
 description: "http://www.imdb.com/title/tt0110912/", 
 trailer: "https://www.youtube.com/embed/s7EdQ4FqbhY",
-img: "https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,686,1000_AL_.jpg"
 )
 Movie.create(
 title: "Swingers",
@@ -269,7 +269,7 @@ duration: "1hr 36min",
 genre: "Drama",
 description: "http://www.imdb.com/title/tt0117802/", 
 trailer: "https://www.youtube.com/embed/nWCct8XbQD0",
-img: "https://www.imdb.com/title/tt0117802/mediaviewer/rm3972792320?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BZjg1ZmViMmEtYzIxNi00MzJlLTk4MDktNTE2ZDkwMzEyMjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,676,1000_AL_.jpg"
 )
 
 puts "seeded"
