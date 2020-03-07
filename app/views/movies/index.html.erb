@@ -5,7 +5,7 @@
 <%= link_to "add movie", new_movie_path%>
 <ul>
 <% @movies.each do |movie| %>
-  <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg">
+  <img src= "<%= movie.img %>">
   <li><%= link_to "#{movie.title}", movie_path(movie.id) %>
   <div><%= movie.duration %></div>
   <div><%= movie.genre %></div>

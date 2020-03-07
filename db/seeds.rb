@@ -14,6 +14,7 @@ duration: "2hr 32min",
 genre: "Action",
 description: "http://www.imdb.com/title/tt0468569/",
 trailer: "https://www.youtube.com/embed/EXeTwQWrcwY",
+img: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
 )
 Movie.create(
 title: "The Bourne Identity",
@@ -21,7 +22,7 @@ duration: "1hr 59min",
 genre: "Action",
 description: "http://www.imdb.com/title/tt0258463/", 
 trailer: "https://www.youtube.com/embed/cD-uQreIwEk",
-img: "https://www.imdb.com/title/tt0258463/mediaviewer/rm3995080704?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BM2JkNGU0ZGMtZjVjNS00NjgyLWEyOWYtZmRmZGQyN2IxZjA2XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
 )
 Movie.create( 
 title: "Avatar",
@@ -29,7 +30,7 @@ duration: "2hr 42min",
 genre: "Action",
 description: "http://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_1", 
 trailer: "https://www.youtube.com/embed/5PSNL1qE6VY",
-img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_.jpg"
 )
  Movie.create(
  title: "Kill Bill Vol 1",
@@ -37,7 +38,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0266697/?ref_=nv_sr_1",
  trailer: "https://www.youtube.com/embed/ot6C1ZKyiME",
- img: "https://www.imdb.com/title/tt0266697/mediaviewer/rm2033140224?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU5Mi00NGRmLTljYjgtMDkyODQ4MjNkMGY2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
  )
  Movie.create(
  title: "Gladiator",
@@ -45,7 +46,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0172495/?ref_=nv_sr_1",
  trailer: "https://www.youtube.com/embed/owK1qxDselE",
- img: "https://www.imdb.com/title/tt0172495/mediaviewer/rm2442542592?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
  )
  Movie.create(
  title: "The Rock",
@@ -53,7 +54,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0117500/",
  trailer: "https://www.youtube.com/embed/313n0wga2xo",
- img: "https://www.imdb.com/title/tt0117500/mediaviewer/rm2777683456?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
  )
  Movie.create(
   title: "Jaws",
@@ -61,7 +62,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0073195/",
  trailer: "https://www.youtube.com/embed/U1fu_sA7XhE",
- img: "https://www.imdb.com/title/tt0073195/mediaviewer/rm1449540864?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX651_CR0,0,651,999_AL_.jpg"
  )
  Movie.create(
  title: "Star Wars Episode IV A New Hope",
@@ -69,7 +70,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0076759/",
  trailer: "https://www.youtube.com/embed/1g3_CFmnU7k",
- img: "https://www.imdb.com/title/tt0076759/mediaviewer/rm3263717120?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,643,1000_AL_.jpg"
  )
  Movie.create(
  title: "Star Wars Episode V The Empire Strikes Back",
@@ -77,7 +78,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0080684/",
  trailer: "https://www.youtube.com/embed/mz_YWNhKOkM",
- img: "https://www.imdb.com/title/tt0080684/mediaviewer/rm3114097664?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,641,1000_AL_.jpg"
  )
  Movie.create(
  title: "Star Wars Episode VI Return of the Jedi",
@@ -85,7 +86,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Action",
  description: "http://www.imdb.com/title/tt0086190/",
  trailer: "https://www.youtube.com/embed/7L8p7_SLzvU",
- img: "https://www.imdb.com/title/tt0086190/mediaviewer/rm602420224?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY999_CR0,0,644,999_AL_.jpg"
 )
  Movie.create(
  title: "Batman Begins",
@@ -109,7 +110,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0120655/", 
  trailer: "https://www.youtube.com/embed/20CRw3XdETA",
- img: "https://www.imdb.com/title/tt0120655/mediaviewer/rm3781231104?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BYzAyOWUyZjQtNDBiMy00ZDExLTgwNmMtZDdmY2ViNzkyN2Y0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,679,1000_AL_.jpg"
  )
  Movie.create(
  title: "Team America World Peace",
@@ -125,7 +126,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
   genre: "Comedy",
  description: "http://www.imdb.com/title/tt0196229/?ref_=nv_sr_2", 
  trailer: "https://www.youtube.com/embed/YtQq0T3ExLs",
- img: "https://www.imdb.com/title/tt0196229/mediaviewer/rm2303908096?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BODI4NDY2NDM5M15BMl5BanBnXkFtZTgwNzEwOTMxMDE@._V1_.jpg"
  )
  Movie.create(
  title: "Superbad",
@@ -133,7 +134,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0829482/?ref_=nv_sr_1", 
  trailer: "https://www.youtube.com/embed/MNpoTxeydiY",
- img: "https://www.imdb.com/title/tt0829482/mediaviewer/rm1868010240?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMTc0NjIyMjA2OF5BMl5BanBnXkFtZTcwMzIxNDE1MQ@@._V1_.jpg"
  )
  Movie.create(
  title: "The Hangover",
@@ -149,7 +150,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0090305/", 
  trailer: "https://www.youtube.com/embed/9qd04u2Yj44",
- img: "https://www.imdb.com/title/tt0090305/mediaviewer/rm2376937472?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMTEwMTU1YjMtMjc0OS00NjZiLTk1MGMtNzhkODI0ZDFjNGI2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY999_CR0,0,638,999_AL_.jpg"
  )
  Movie.create(
  title: "Major League",
@@ -165,7 +166,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt2234155/", 
  trailer: "https://www.youtube.com/embed/cdnoqCViqUo",
- img: "https://www.imdb.com/title/tt2234155/mediaviewer/rm2225251328?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BMjM1MzczMDgwOV5BMl5BanBnXkFtZTcwMDM4NjM2OQ@@._V1_.jpg"
  )
  Movie.create(
  title: "Back to the Future",
@@ -173,7 +174,7 @@ img: "https://www.imdb.com/title/tt0499549/mediaviewer/rm843615744?ref_=tt_ov_i"
  genre: "Comedy",
  description: "http://www.imdb.com/title/tt0088763/", 
  trailer: "https://www.youtube.com/embed/qvsgGtivCgs",
- img: "https://www.imdb.com/title/tt0088763/mediaviewer/rm554638848?ref_=tt_ov_i"
+ img: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,643,1000_AL_.jpg"
  )
  Movie.create(
  title: "Anchorman",
@@ -189,7 +190,7 @@ duration: "1hr 59min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0396269/", 
 trailer: "https://www.youtube.com/embed/omI8i1a7rlQ",
-img: "https://www.imdb.com/title/tt0396269/mediaviewer/rm746526464?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BZmJkNzViYjYtZWZlNy00OGE4LWI2MzUtYTcwNjY3Y2MyODIwXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
 )
 Movie.create(
 title: "Dazed and Confused",
@@ -197,7 +198,7 @@ duration: "1hr 42min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0106677/", 
 trailer: "https://www.youtube.com/embed/3aQuvPlcB-8",
-img: "https://www.imdb.com/title/tt0106677/mediaviewer/rm3026180352?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BMTM5MDY5MDQyOV5BMl5BanBnXkFtZTgwMzM3NzMxMDE@._V1_.jpg"
 )
 Movie.create(
 title: "Ferris Beullers Day Off",
@@ -213,7 +214,7 @@ duration: "1hr 31min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0071853/", 
 trailer: "https://www.youtube.com/embed/LG1PlkURjxE",
-img: "https://www.imdb.com/title/tt0071853/mediaviewer/rm1943276800?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
 )
 Movie.create(
 title: "Blues Brothers",
@@ -229,7 +230,7 @@ duration: "1hr 49min",
 genre: "Comedy",
 description: "http://www.imdb.com/title/tt0077975/", 
 trailer: "https://www.youtube.com/embed/BoS3-yHoaSY",
-img: "https://www.imdb.com/title/tt0077975/mediaviewer/rm3420263936?ref_=tt_ov_i"
+img: "https://m.media-amazon.com/images/M/MV5BM2M2ZDA4MTYtOGRjMi00OTg5LWI1ZTUtMjQxZTc2NWZjNDFkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
 )
 Movie.create(
 title: "The Godfather",
