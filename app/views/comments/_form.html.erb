@@ -1,0 +1,11 @@
+<h4><%= link_to "back", movie_path %>
+
+<%= form_with(model: [@movie, @comment], local: true, class:"ui form") do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title, required: true%>
+<%= f.label :comment%>
+<%= f.text_area :comment, required: true %>
+
+<%= f.submit nil, class: "ui purple button inverted" %>
+<% end %>

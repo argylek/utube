@@ -1,2 +1,16 @@
 <h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg">
+  <li><%= @movie.title%>
+  <div><%= @movie.duration %></div>
+  <div><%= @movie.genre %></div>
+  <div><%= link_to "IMDB INFO", @movie.description%>
+
+  <iframe src=<%= @movie.trailer %>></iframe>
+  <%# <%= binding.pry %>
+  <%# <% @movie.comments.each do |comment| %>
+  <%# <h2><%= comment.title %></h2>
+  <%# <div><%= comment.body %></div> 
+  <%= link_to "comments", user_comments_path(current_user.id)%>
+  <%= link_to "new comment", new_user_comment_path(current_user)%>
+ <%# <% end%> %>
+
