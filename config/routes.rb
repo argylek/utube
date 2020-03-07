@@ -3,8 +3,9 @@ Rails.application.routes.draw do
    root to: "movies#index"
    devise_for :users
 
+   resources :users do
+    resources :comments
+   end
+
    resources :movies
-   resources :comments
-
-
 end

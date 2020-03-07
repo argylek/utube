@@ -1,2 +1,14 @@
 <h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+
+<%# 
+<h2><%= @movies.length <= ? "No movies in your database"%></h2>
+<%= link_to "add movie", new_movie_path%>
+<ul>
+<% @movies.each do |movie| %>
+  <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg">
+  <li><%= link_to "#{movie.title}", movie_path(movie.id) %>
+  <div><%= movie.duration %></div>
+  <div><%= movie.genre %></div>
+  
+  <% end%>
+  </ul>

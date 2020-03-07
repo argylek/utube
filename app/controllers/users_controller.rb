@@ -1,6 +1,6 @@
-class MoviesController < ApplicationController
+class UsersController < ApplicationController
   def index
-    @movies = Movie.all
+    @users = current_user
   end
 
   def show
