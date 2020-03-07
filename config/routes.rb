@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     resources :comments
    end
 
-   resources :movies
+   resources :movies do
+    resources :comments
+   end
+
+    match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+    match 'users/:id' => 'users#show', via: :get
 end

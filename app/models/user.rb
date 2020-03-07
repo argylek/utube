@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :comments
          has_many :movies, :through => :comments
+
+  attr_accessor :first_name, :last_name
 end

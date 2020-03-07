@@ -9,6 +9,8 @@
   <li><%= link_to "#{movie.title}", movie_path(movie.id) %>
   <div><%= movie.duration %></div>
   <div><%= movie.genre %></div>
-  
-  <% end%>
+    <div><%= link_to "Delete", movie_path(movie), method: :delete%>
+    <div><%= link_to "Edit", edit_movie_path(movie)%>
+  <hr />
+<% end%>
   </ul>

@@ -1,16 +1,28 @@
 class CommentsController < ApplicationController
   before_action :set_user
-  before_action :set_movie, only: [:new, :edit, :create, :update]
+  before_action :set_movie
   before_action :set_comment, only: [:edit, :update]
   def index
-    @comments = current_user.comments
+    @comments = @movie.comments
   end
 
   def show
-    @comment = current_user.comments.find(params[:id])
+    @comment = @movie.comments.find(params[:id])
   end
 
-  def new
+ def new
+    # @physicians = Physician.all
+    @comment = @movie.comments.new
+  end
+
+  def create
+    # binding.pry
+    @comment = @movie.comments.new(comment_params.merge(user_id: @user.id))
+    if @comment.save
+      redirect_to movie_path(@movie)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -27,7 +39,7 @@ class CommentsController < ApplicationController
   def set_comment
     @comment = Comment.find(params[:id])
   end
-  def comment_prams
-    params.require(:comment).permit(:title, :body)
+  def comment_params
+    params.require(:comment).permit(:title, :body, :user_id)
   end
 end

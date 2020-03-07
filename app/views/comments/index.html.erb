@@ -1,2 +1,14 @@
 <h1>Comments#index</h1>
 <p>Find me in app/views/comments/index.html.erb</p>
+
+
+<%# <h1><%= @movie.title%> %>
+<%= link_to "new comment", new_movie_comment_path(@movie)%>
+
+<% @comments.each do |comment| %>
+  <h2><%= link_to "#{comment.title}", movie_comment_path(@movie.id, comment.id) %></h2>
+  <div><%= comment.body %></div>
+  <div><%= link_to "Delete", movie_comment_path(@movie.id, comment.id), method: :delete%>
+  <div><%= link_to "Edit", edit_movie_comment_path(@movie.id, comment.id)%>
+  <hr />
+<% end%>
