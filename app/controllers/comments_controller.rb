@@ -28,6 +28,19 @@ class CommentsController < ApplicationController
   def edit
   end
 
+  def update
+    if @comment.update(comment_params)
+      redirect_to movie_comments_path(@movie)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @movie.comments.find(params[:id]).destroy
+    redirect_to movie_comments_path(@movie)
+  end
+
   private
 
   def set_user
